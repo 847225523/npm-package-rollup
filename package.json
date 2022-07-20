@@ -1,0 +1,56 @@
+{
+  "name": "npm-package-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "commit": "cz",
+    "lint": "eslint src --ext .js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/847225523/npm-package-rollup.git"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "template",
+    "rollup"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/847225523/npm-package-rollup/issues"
+  },
+  "homepage": "https://github.com/847225523/npm-package-rollup#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/preset-env": "^7.13.15",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
+    "rollup": "^2.77.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node  scripts/verify-commit-msg.js"
+  },
+  "lint-staged": {
+    "src/**/*.js?(x)": [
+      "prettier --write",
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
