@@ -2,8 +2,13 @@
   "name": "npm-package-rollup",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "browser": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "scripts": {
+    "dev": "rollup  -c -w  --environment NODE_ENV:development",
+    "build": "npm run clean && rollup  -c  --environment NODE_ENV:production",
+    "clean": "rimraf dist",
     "commit": "cz",
     "lint": "eslint src --ext .js",
     "prepare": "husky install"
@@ -33,6 +38,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
+    "rimraf": "^3.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
     "rollup": "^2.77.0"
