@@ -9,9 +9,9 @@
     "dev": "rollup  -c -w  --environment NODE_ENV:development",
     "build": "npm run clean && rollup  -c  --environment NODE_ENV:production",
     "clean": "rimraf dist",
-    "lint": "eslint src --ext .js",
+    "lint": "eslint src --ext .js --fix",
     "prepare": "husky install",
-    "commit": "git add src/index.js package.json && cz"
+    "commit": "git add . && cz"
   },
   "repository": {
     "type": "git",
@@ -50,8 +50,7 @@
   "lint-staged": {
     "src/**/*.js?(x)": [
       "prettier --write",
-      "npm run lint",
-      "git add src/node.js"
+      "npm run lint"
     ]
   },
   "config": {
