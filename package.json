@@ -9,9 +9,9 @@
     "dev": "rollup  -c -w  --environment NODE_ENV:development",
     "build": "npm run clean && rollup  -c  --environment NODE_ENV:production",
     "clean": "rimraf dist",
-    "commit": "cz",
     "lint": "eslint src --ext .js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git add . && cz"
   },
   "repository": {
     "type": "git",
