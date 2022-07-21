@@ -51,7 +51,7 @@
     "src/**/*.js?(x)": [
       "prettier --write",
       "npm run lint",
-      "git add index.js"
+      "git add node.js"
     ]
   },
   "config": {
