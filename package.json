@@ -11,7 +11,7 @@
     "clean": "rimraf dist",
     "lint": "eslint src --ext .js",
     "prepare": "husky install",
-    "commit": "git add src package.json && cz"
+    "commit": "git add src/index.js package.json && cz"
   },
   "repository": {
     "type": "git",
@@ -50,7 +50,8 @@
   "lint-staged": {
     "src/**/*.js?(x)": [
       "prettier --write",
-      "npm run lint"
+      "npm run lint",
+      "git add src/node.js"
     ]
   },
   "config": {
